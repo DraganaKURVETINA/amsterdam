@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amsterdam - Više Opcija</title>
+    <title>Admin Panel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,15 +13,22 @@
             <li><a href="znamenitosti.html">Znamenitosti</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
             <li><a href="opcije.html">Opcije</a></li>
-            <li><a href="vise-opcija.html" class="active">Više Opcija</a></li>
+            <li><a href="vise-opcija.html">Više Opcija</a></li>
             <li><a href="dodaj.html">Dodaj</a></li>
+            <li><a href="admin.html" class="active">Admin</a></li>
         </ul>
     </nav>
     <header>
-        <h1>Više Opcija</h1>
+        <h1>Dobrodošli u Admin Panel</h1>
     </header>
     <main>
-        <p>Ovo je stranica za više opcija.</p>
+        <div class="admin-forma">
+            <form action="../scripts/admin-login.php" method="POST">
+                <label for="password">Unesite lozinku za pristup:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Prijavi se</button>
+            </form>
+        </div>
     </main>
     <footer>
         <p>&copy; 2025 Amsterdam Sajt</p>

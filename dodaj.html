@@ -3,25 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amsterdam - Dodaj</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Dodaj Sadržaj</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<nav>
-    <ul>
-        <li><a href="pages/index.html">Početna</a></li>
-        <li><a href="pages/znamenitosti.html">Znamenitosti</a></li>
-        <li><a href="pages/kontakt.html">Kontakt</a></li>
-        <li><a href="pages/opcije.html">Opcije</a></li>
-        <li><a href="pages/vise-opcija.html">Više Opcija</a></li>
-        <li><a href="pages/dodaj.html">Dodaj</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="znamenitosti.html">Znamenitosti</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="opcije.html">Opcije</a></li>
+            <li><a href="vise-opcija.html">Više Opcija</a></li>
+            <li><a href="dodaj.html" class="active">Dodaj</a></li>
+            <li><a href="admin.html">Admin</a></li>
+        </ul>
+    </nav>
     <header>
-        <h1>Dodaj</h1>
+        <h1>Dodaj Sadržaj</h1>
     </header>
     <main>
-        <p>Ovo je stranica za dodavanje sadržaja.</p>
+        <div class="dodaj-forma">
+            <form action="../scripts/dodaj-sadrzaj.php" method="POST" enctype="multipart/form-data">
+                <label for="ime">Ime:</label>
+                <input type="text" id="ime" name="ime" placeholder="Unesite vaše ime" required>
+
+                <label for="slika">Slika:</label>
+                <div class="upload-box">
+                    <input type="file" id="slika" name="slika" accept="image/*" required>
+                    <span class="plus-sign">+</span>
+                </div>
+
+                <label for="opis">Opis:</label>
+                <textarea id="opis" name="opis" rows="5" placeholder="Unesite opis..." required></textarea>
+
+                <button type="submit" class="submit-btn">Pošalji</button>
+            </form>
+        </div>
     </main>
     <footer>
         <p>&copy; 2025 Amsterdam Sajt</p>

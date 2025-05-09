@@ -11,7 +11,7 @@
         <ul>
             <li><a href="index.html">Početna</a></li>
             <li><a href="znamenitosti.html">Znamenitosti</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="kontakt.html" class="active">Kontakt</a></li>
             <li><a href="opcije.html">Opcije</a></li>
             <li><a href="vise-opcija.html">Više Opcija</a></li>
             <li><a href="dodaj.html">Dodaj</a></li>
@@ -21,10 +21,24 @@
         <h1>Kontaktirajte nas</h1>
     </header>
     <main>
-        <p>Ovo je kontakt stranica.</p>
+        <form action="../scripts/obrada_kontakta.php" method="POST" class="kontakt-forma">
+            <label for="ime">Ime:</label>
+            <input type="text" id="ime" name="ime" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="poruka">Poruka:</label>
+            <textarea id="poruka" name="poruka" rows="5" required></textarea>
+            
+            <button type="submit">Pošalji</button>
+        </form>
+        <div class="admin-link">
+            <a href="admin.html">Pristup administraciji</a> <!-- Dodato dugme za admin -->
+        </div>
     </main>
     <footer>
-        <p>&copy; 2025 Sajt</p>
+        <p>&copy; 2025 Amsterdam Sajt</p>
     </footer>
 </body>
 </html>

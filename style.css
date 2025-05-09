@@ -3,8 +3,8 @@
     src: url('../fonts/LEMONMILK-Medium.otf') format('opentype');
 }
 
-/* Google Fonts import za Oswald i Roboto */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap');
+/* Google Fonts import za Oswald, Roboto i Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&family=Poppins:wght@500&display=swap');
 
 /* Globalni stilovi */
 body {
@@ -14,6 +14,7 @@ body {
     line-height: 1.6;
     background-color: #f8f9fa; /* Svetlosiva pozadina */
     color: #333; /* Tamni tekst */
+    text-align: center; /* Centriranje teksta globalno */
 }
 
 /* Navigacija */
@@ -21,13 +22,14 @@ nav {
     background: #40E0D0; /* Tirkizna pozadina */
     color: #fff; /* Svetli tekst */
     padding: 1rem;
-    text-align: center;
+    text-align: center; /* Centriranje teksta u navigaciji */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: center; /* Centriranje liste u navigaciji */
 }
 
 nav ul li {
@@ -38,108 +40,176 @@ nav ul li {
 nav ul li a {
     color: #fff; /* Svetli tekst */
     text-decoration: none;
-    font-family: 'LemonMilk', sans-serif; /* Specifican font za navigaciju */
-    font-size: 1.2rem; /* Veci font za navigaciju */
-    transition: background-color 0.3s ease; /* Glatki prelaz za hover i aktivnu stranicu */
+    font-family: 'LemonMilk', sans-serif;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav ul li a:hover {
-    background-color: #E91E63; /* Roze pozadina na hover */
-    padding: 5px 10px; /* Dodaj padding za hover */
-    border-radius: 5px; /* Zaobljeni uglovi */
-}
-
+nav ul li a:hover,
 nav ul li a.active {
-    background-color: #E91E63; /* Roze pozadina za aktivnu stranicu */
-    color: #fff; /* Svetli tekst */
-    font-weight: bold;
+    background-color: #E91E63; /* Roze pozadina za hover i aktivnu stranicu */
+    color: #fff;
     padding: 5px 10px;
-    border-radius: 5px; /* Zaobljeni uglovi za aktivnu stranicu */
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 /* Header */
 header {
-    background: #FFB6C1; /* Zlatna pozadina za header */
-    color: #fff; /* Tamni tekst */
+    background: #FFB6C1; /* Svetlo roze pozadina */
+    color: #fff; /* Beli tekst */
     padding: 2rem 0;
-    text-align: center;
+    text-align: center; /* Centriranje teksta u headeru */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Blaga senka ispod headera */
 }
 
 header h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 3.5rem; /* Povecan naslov za bolju preglednost */
+    font-size: 3.5rem;
     margin: 0;
 }
 
 /* Glavni sadržaj */
 main {
     padding: 2rem;
+    text-align: center; /* Centriranje teksta u glavnom sadržaju */
 }
 
 main h2 {
     font-family: 'Oswald', sans-serif;
-    font-size: 2.5rem; /* Povecana velicina podnaslova */
+    font-size: 2.5rem;
     color: #333;
-    text-align: center;
     margin-top: 2rem;
     margin-bottom: 1rem;
     animation: fadeIn 1.5s ease; /* Animacija pojavljivanja naslova */
 }
 
-/* Stilizacija za slike i opise */
-figure {
-    text-align: center; /* Centriranje slike i opisa */
-    margin: 20px auto; /* Automatsko centriranje figure */
+/* Kontakt forma */
+.kontakt-forma {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto; /* Centriranje forme */
 }
 
-figure img {
-    display: inline-block; /* Centriranje slike unutar figure */
-    max-width: 80%; /* Slike ce biti responzivne sa maksimalnom širinom od 80% */
-    height: auto; /* Zadržavanje proporcija */
-    border-radius: 15px; /* Zaobljene ivice slika */
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Brža i suptilnija animacija */
+.kontakt-forma label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: center; /* Centriranje labela */
 }
 
-figure img:hover {
-    transform: scale(1.03); /* Smanjeno uvecanje slike */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Suptilnija senka ispod slike */
+.kontakt-forma input[type="text"],
+.kontakt-forma input[type="email"],
+.kontakt-forma textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    text-align: center; /* Centriranje unosa */
 }
 
-figcaption {
-    font-style: italic; /* Italic stil za tekst */
-    margin-top: 10px; /* Razmak izmedu slike i opisa */
-    color: #555; /* Lepša boja za tekst */
+.kontakt-forma textarea {
+    resize: none;
 }
 
-/* Paragrafi ispod slika */
-section p {
-    text-align: center; /* Centriranje teksta */
-    margin-top: 15px; /* Razmak od slike/opisa */
-    font-size: 1.2rem; /* Povecan font za paragraf */
-    color: #555; /* Neutralna boja za tekst */
+/* Dugme sa promenjenim fontom */
+.kontakt-forma button {
+    width: 100%;
+    background: linear-gradient(90deg, #ff7a18, #af002d, #319197);
+    background-size: 300% 300%;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: gradient 3s infinite;
+    font-family: 'Poppins', sans-serif; /* Novi font za dugme */
+    font-weight: 500;
+    letter-spacing: 0.5px; /* Blago povecanje razmaka izmedu slova */
 }
 
-/* Razmak izmedu sekcija */
-section {
-    margin-top: 5rem; /* Veci razmak iznad svake sekcije */
-    margin-bottom: 5rem; /* Veci razmak ispod svake sekcije */
-    opacity: 0; /* Pocetno stanje za fade-in animaciju */
-    transform: translateY(20px); /* Lagani pomak nadole */
-    transition: opacity 1s ease, transform 1s ease; /* Animacija */
+.kontakt-forma button:hover {
+    transform: scale(1.1); /* Lagano uvecanje na hover */
 }
 
-section.visible {
-    opacity: 1; /* Vidljivo */
-    transform: translateY(0); /* Vracanje na mesto */
+/* Admin link u kontakt stranici */
+.admin-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.admin-link a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0077c2;
+    border: 2px solid #0077c2;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.admin-link a:hover {
+    background-color: #0077c2;
+    color: white;
+}
+
+/* Admin panel forma */
+.admin-forma {
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.admin-forma label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.admin-forma input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.admin-forma button {
+    width: 100%;
+    background-color: #0077c2;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.admin-forma button:hover {
+    background-color: #005a9e;
 }
 
 /* Footer */
 footer {
     background: #E91E63; /* Roze pozadina */
     color: #fff; /* Svetli tekst */
-    text-align: center;
+    text-align: center; /* Centriranje teksta u footeru */
     padding: 1rem 0;
     margin-top: 2rem;
     font-size: 1rem; /* Povecan font za bolju citljivost */
@@ -163,23 +233,6 @@ footer {
 }
 
 /* Gradient hover efekat za dugmad */
-button {
-    background: linear-gradient(90deg, #ff7a18, #af002d, #319197);
-    background-size: 300% 300%;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    animation: gradient 3s infinite;
-}
-
-button:hover {
-    transform: scale(1.1); /* Lagano uvecanje na hover */
-}
-
 @keyframes gradient {
     0% {
         background-position: 0% 50%;

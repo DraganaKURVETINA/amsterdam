@@ -42,3 +42,8 @@ style.innerHTML = `
     }
 `;
 document.head.appendChild(style);
+const url = new URL(window.location.href);
+if (url.searchParams.has('error')) {
+    url.searchParams.delete('error');
+    window.history.replaceState({}, document.title, url.pathname); // Uklanja parametar iz URL-a
+}
