@@ -286,6 +286,18 @@ footer {
     color: #ff7a18;
 }
 
+.upload-box img {
+    max-width: 100%;
+    max-height: 100px;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: none; /* Slika je skrivena dok se ne ucita */
+}
+
+.upload-box img.show {
+    display: block; /* Prikaz slike kad je ucitana */
+}
+
 /* Animacija za fade-in efekat kad se stranica otvori */
 @keyframes slide-in {
     from {
@@ -346,4 +358,25 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     animation: slide-in 0.8s ease-in-out;
+}
+
+/* Ogranicavanje velicine slika */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Zaobljeni uglovi za slike */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Italic stil za opise ispod slika */
+.image-description {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
 }
