@@ -25,7 +25,7 @@
         <section>
             <h2>Rijksmuseum</h2>
             <figure>
-                <img src="../images/rijksmuseum.jpg" alt="Rijksmuseum" style="width:100%; max-width:600px;">
+                <img src="../images/rijksmuseum.jpg" alt="Rijksmuseum">
                 <figcaption>Rijksmuseum - Nacionalni muzej umetnosti i istorije</figcaption>
             </figure>
             <p>
@@ -38,7 +38,7 @@
         <section>
             <h2>Kuća Ane Frank</h2>
             <figure>
-                <img src="../images/anne-frank-house.jpg" alt="Kuća Ane Frank" style="width:100%; max-width:600px;">
+                <img src="../images/anne-frank-house.jpg" alt="Kuća Ane Frank">
                 <figcaption>Kuća Ane Frank - Simbol hrabrosti i istorije</figcaption>
             </figure>
             <p>
@@ -51,7 +51,7 @@
         <section>
             <h2>Vondelpark</h2>
             <figure>
-                <img src="../images/vondelpark.jpg" alt="Vondelpark" style="width:100%; max-width:600px;">
+                <img src="../images/vondelpark.jpg" alt="Vondelpark">
                 <figcaption>Vondelpark - Oaza mira u srcu Amsterdama</figcaption>
             </figure>
             <p>
@@ -64,7 +64,7 @@
         <section>
             <h2>Van Goghov muzej</h2>
             <figure>
-                <img src="../images/van-gogh-museum.jpg" alt="Van Goghov muzej" style="width:100%; max-width:600px;">
+                <img src="../images/van-gogh-museum.jpg" alt="Van Goghov muzej">
                 <figcaption>Van Goghov muzej - Inspiracija kroz umetnost</figcaption>
             </figure>
             <p>
@@ -76,5 +76,21 @@
     <footer>
         <p>&copy; 2025 Amsterdam Sajt</p>
     </footer>
+    <script>
+        // Dodavanje klase "visible" kada su sekcije u vidnom polju
+        const sections = document.querySelectorAll('section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>

@@ -12,13 +12,13 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #fff; /* Cista bela pozadina */
+    background-color: #f8f9fa; /* Svetlosiva pozadina */
     color: #333; /* Tamni tekst */
 }
 
 /* Navigacija */
 nav {
-    background: #333; /* Tamna pozadina */
+    background: #40E0D0; /* Tirkizna pozadina */
     color: #fff; /* Svetli tekst */
     padding: 1rem;
     text-align: center;
@@ -36,28 +36,40 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #fff; /* Svetli tekst */
     text-decoration: none;
     font-family: 'LemonMilk', sans-serif; /* Specifican font za navigaciju */
-    font-size: 1.1rem;
+    font-size: 1.2rem; /* Veci font za navigaciju */
+    transition: background-color 0.3s ease; /* Glatki prelaz za hover i aktivnu stranicu */
 }
 
 nav ul li a:hover {
-    text-decoration: underline; /* Efekat pri prelasku mišem */
+    background-color: #E91E63; /* Roze pozadina na hover */
+    padding: 5px 10px; /* Dodaj padding za hover */
+    border-radius: 5px; /* Zaobljeni uglovi */
+}
+
+nav ul li a.active {
+    background-color: #E91E63; /* Roze pozadina za aktivnu stranicu */
+    color: #fff; /* Svetli tekst */
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px; /* Zaobljeni uglovi za aktivnu stranicu */
 }
 
 /* Header */
 header {
-    background: #f4f4f4; /* Svetla pozadina za header */
+    background: #FFB6C1; /* Zlatna pozadina za header */
+    color: #fff; /* Tamni tekst */
     padding: 2rem 0;
     text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Blaga senka ispod headera */
 }
 
 header h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3.5rem; /* Povecan naslov za bolju preglednost */
     margin: 0;
-    color: #333;
 }
 
 /* Glavni sadržaj */
@@ -67,7 +79,7 @@ main {
 
 main h2 {
     font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem; /* Povecana velicina podnaslova */
     color: #333;
     text-align: center;
     margin-top: 2rem;
@@ -83,16 +95,16 @@ figure {
 
 figure img {
     display: inline-block; /* Centriranje slike unutar figure */
-    max-width: 100%; /* Slike ce biti responzivne */
+    max-width: 80%; /* Slike ce biti responzivne sa maksimalnom širinom od 80% */
     height: auto; /* Zadržavanje proporcija */
     border-radius: 15px; /* Zaobljene ivice slika */
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Glatki prelaz */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Brža i suptilnija animacija */
 }
 
 figure img:hover {
-    transform: scale(1.1); /* Lagano uvecanje slike */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Senka ispod slike */
+    transform: scale(1.03); /* Smanjeno uvecanje slike */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Suptilnija senka ispod slike */
 }
 
 figcaption {
@@ -105,7 +117,7 @@ figcaption {
 section p {
     text-align: center; /* Centriranje teksta */
     margin-top: 15px; /* Razmak od slike/opisa */
-    font-size: 1rem;
+    font-size: 1.2rem; /* Povecan font za paragraf */
     color: #555; /* Neutralna boja za tekst */
 }
 
@@ -125,12 +137,18 @@ section.visible {
 
 /* Footer */
 footer {
-    background: #333;
-    color: #fff;
+    background: #E91E63; /* Roze pozadina */
+    color: #fff; /* Svetli tekst */
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
-    font-size: 0.9rem;
+    font-size: 1rem; /* Povecan font za bolju citljivost */
+}
+
+/* Prilagodena selekcija teksta */
+::selection {
+    background-color: #40E0D0; /* Tirkizna pozadina za selektovani tekst */
+    color: #fff; /* Svetli tekst za selektovani sadržaj */
 }
 
 /* Animacije */
