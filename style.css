@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'LemonMilk';
+    src: url('../fonts/LEMONMILK-Medium.otf') format('opentype');
+}
+
+/* Google Fonts import za Oswald i Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap');
+
+/* Globalni stilovi */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #fff; /* Cista bela pozadina */
+    color: #333; /* Tamni tekst */
+}
+
+/* Navigacija */
+nav {
+    background: #333; /* Tamna pozadina */
+    color: #fff; /* Svetli tekst */
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'LemonMilk', sans-serif; /* Specifican font za navigaciju */
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Efekat pri prelasku mišem */
+}
+
+/* Header */
+header {
+    background: #f4f4f4; /* Svetla pozadina za header */
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+    color: #333;
+}
+
+/* Glavni sadržaj */
+main {
+    padding: 2rem;
+}
+
+main h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 1.5s ease; /* Animacija pojavljivanja naslova */
+}
+
+/* Stilizacija za slike i opise */
+figure {
+    text-align: center; /* Centriranje slike i opisa */
+    margin: 20px auto; /* Automatsko centriranje figure */
+}
+
+figure img {
+    display: inline-block; /* Centriranje slike unutar figure */
+    max-width: 100%; /* Slike ce biti responzivne */
+    height: auto; /* Zadržavanje proporcija */
+    border-radius: 15px; /* Zaobljene ivice slika */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Glatki prelaz */
+}
+
+figure img:hover {
+    transform: scale(1.1); /* Lagano uvecanje slike */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Senka ispod slike */
+}
+
+figcaption {
+    font-style: italic; /* Italic stil za tekst */
+    margin-top: 10px; /* Razmak izmedu slike i opisa */
+    color: #555; /* Lepša boja za tekst */
+}
+
+/* Paragrafi ispod slika */
+section p {
+    text-align: center; /* Centriranje teksta */
+    margin-top: 15px; /* Razmak od slike/opisa */
+    font-size: 1rem;
+    color: #555; /* Neutralna boja za tekst */
+}
+
+/* Razmak izmedu sekcija */
+section {
+    margin-top: 5rem; /* Veci razmak iznad svake sekcije */
+    margin-bottom: 5rem; /* Veci razmak ispod svake sekcije */
+    opacity: 0; /* Pocetno stanje za fade-in animaciju */
+    transform: translateY(20px); /* Lagani pomak nadole */
+    transition: opacity 1s ease, transform 1s ease; /* Animacija */
+}
+
+section.visible {
+    opacity: 1; /* Vidljivo */
+    transform: translateY(0); /* Vracanje na mesto */
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Animacije */
+/* Fade-in animacija */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Gradient hover efekat za dugmad */
+button {
+    background: linear-gradient(90deg, #ff7a18, #af002d, #319197);
+    background-size: 300% 300%;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: gradient 3s infinite;
+}
+
+button:hover {
+    transform: scale(1.1); /* Lagano uvecanje na hover */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
