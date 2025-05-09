@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dodaj Sadržaj</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <nav>
@@ -31,6 +31,7 @@
                 <div class="upload-box">
                     <input type="file" id="slika" name="slika" accept="image/*" required>
                     <span class="plus-sign">+</span>
+                    <img id="preview" src="" alt="Preview slike" style="display: none;">
                 </div>
 
                 <label for="opis">Opis:</label>
@@ -43,5 +44,20 @@
     <footer>
         <p>&copy; 2025 Amsterdam Sajt</p>
     </footer>
+    <script>
+        document.getElementById('slika').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const preview = document.getElementById('preview');
+                    preview.src = e.target.result;
+                    preview.style.display = 'block'; // Prikazujemo sliku
+                    document.querySelector('.plus-sign').style.display = 'none'; // Sakrivamo plus znak
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 </html>
